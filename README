@@ -1,0 +1,37 @@
+ This code is computing the perturbative formula of the matter power spectrum 
+  in real/redshift space at the 1-loop level before/after a density field reconstruction
+
+ You can run the shell script as 
+   sh run_pkl1loop.sh
+
+ The script consists of 2 python codes: 
+
+   calc_1loopcomp.py 
+     computing the coefficients of 1-loop matter power spectrum with different combinations of mu, fz, and b1.
+     it takes about a day to finish the caluclation
+     The output is 
+      1st col: k, 2th col: P_linear(k), 3-22th cols: B_nmp (coefficients of P_13), 23-52th cols: A_nmp (coefficients of P_22)
+      More details are written in the head of the code
+
+   calc_pkl.py 
+     generating P_00(k), P_13(k) and P_22(k) for mono, quad, and hexadecapoles using the coefficients computed with calc_1loopcomp.py
+     the calculation is fast if you have the output of calc_1loopcomp.py
+     The output is
+       1st col: k, 2-4th cols: P_00(l=0,2,4), 5-7th cols: P_13(l=0,2,4), 8-10th cols: P_22(l=0,2,4)
+
+ You can change the following argruments in run_pkl1loop.sh [current values are written in the bracket]:
+   1. output redshift [0]
+   2. real space 'r' or redshift space 'z' [z]
+   3. reconstruction scale in unit of Mpc/h [10]
+   4. linear bias [1]
+   5. input linear power spectrum at z=0 ['prepost2021_PLC18_matterpower-z0p0-noneutrino.dat']
+   6. output directory [output_temp]
+   7. output file of coefficients 1-loop P(k) computed with calc_1loopcomp.py [${outdir}/1loopcomp_${space}space_postR${rs}.dat]
+   8. output file of 1-loop P(k) computed with calc_pkl.py [${outdir}/pkl_${space}space_postR${rs}_z${zout}.dat]
+   9. a set of cosmological parameters which only used for computing linear growth factor/rate [GB]
+
+ A python toolkit Colossus (bdiemer.bitbucket.io/colossus/) is used in calc_pkl.py
+
+ Please send an e-mail to Chiaki Hikage (chiaki.hikage'atmark'ipmu.jp) if you have any questions.
+
+ Reference: C.Hikage, K.Koyama, R.Takahashi, Phys.Rev.D 101 (2020) 043510 (arXiv:1911.06461)

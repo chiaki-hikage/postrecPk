@@ -28,7 +28,6 @@
    6. output directory [output_temp]
    7. output file of coefficients 1-loop P(k) computed with calc_1loopcomp.py [${outdir}/1loopcomp_${space}space_postR${rs}.dat]
    8. output file of 1-loop P(k) computed with calc_pkl.py [${outdir}/pkl_${space}space_postR${rs}_z${zout}.dat]
-   9. a set of cosmological parameters which only used for computing linear growth factor/rate [GB]
 
  A python toolkit Colossus (bdiemer.bitbucket.io/colossus/) is used in calc_pkl.py
 

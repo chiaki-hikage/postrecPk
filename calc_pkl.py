@@ -11,7 +11,6 @@
 #  args[4]: linear bias
 #  args[5]: input file of 1-loop coefficients
 #  args[6]: output filename
-#  args[7]: whose set of cosmological parameters [GB or Takahashi]
 #
 # output:
 #   1st col: k
@@ -56,23 +55,15 @@ inf_1loopcomp = args[5]
 outf = args[6]
 print('output filename:',outf)
 
-cosmo = args[7]
 ### set cosmology only used for computing the linear growth factor at z=zout
-if cosmo == 'Takahashi':
-    hubble=0.6727
-    ob0=0.04917
-    om0=0.3156
-    od0=1-om0
-    sig8=0.831
-    ns=0.9645
-elif cosmo == 'GB':
-    obh2=0.02236
-    hubble=0.6727
-    ob0=obh2/hubble**2
-    om0=0.315
-    od0=1-om0
-    sig8=0.8234
-    ns=0.9649
+obh2=0.02236
+hubble=0.6727
+ob0=obh2/hubble**2
+om0=0.315
+od0=1-om0
+sig8=0.8234
+ns=0.9649
+###
 params={'flat':True,'H0':hubble*100,'Om0':om0,'Ob0':ob0,'sigma8':sig8,'ns':ns}
 cosmo_for_colossus=cosmology.setCosmology('myCosmo',params)
 #cosmo_for_colossus=cosmology.setCosmology('planck18-only')

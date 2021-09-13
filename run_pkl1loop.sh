@@ -42,7 +42,4 @@ fi
 
 inf_1loopcomp=$outf_1loopcomp
 
-### 9. cosmo: GB or Takahashi
-cosmo='GB'
-
-python calc_pkl.py $space $rs $zout $blin $inf_1loopcomp $outf_pkl1loop $cosmo
+python calc_pkl.py $space $rs $zout $blin $inf_1loopcomp $outf_pkl1loop

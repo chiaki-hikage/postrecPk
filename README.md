@@ -11,7 +11,7 @@
 より小スケールまで摂動論が適用できることが分かりました。
 また構造の成長率を表すパラメターの決定精度が改善することも確かめました。
 
-密度場を再構築するコードは以下をご覧ください
+密度場を再構築するコードは以下をご覧ください。  
 https://github.com/chiaki-hikage/reconstruct_densityfield
 
 # Referernces
@@ -23,3 +23,7 @@ Phys. Rev. D, Vol. 96 (2017) id.043513
 - Perturbation theory for the redshift-space matter power spectra after reconstruction  
 Chiaki Hikage, Kazuya Koyama, Ryuichi Takahashi  
 Phys. Rev. D, Vol. 101, Issue 4 (2020), id.043510
+
+- Covariance of the redshift-space matter power spectrum after reconstruction  
+Chiaki Hikage, Ryuichi Takahashi, Kazuya Koyama  
+Phys. Rev. D, Vol.102, Issue 8 (2020), id.083514
